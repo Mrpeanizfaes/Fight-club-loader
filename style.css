@@ -1,0 +1,74 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #41503b;
+}
+
+.container {
+  width: 400px;
+  height: 200px;
+  perspective: 1600px;
+  margin: 15% auto;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 6s linear infinite;
+}
+
+.text {
+  font-family: "FightThis", sans-serif;
+  color: #fdb7fd;
+  font-weight: 600;
+  font-size: 100px;
+  width: 40%;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.face {
+  position: absolute;
+  background-color: #ff6f96;
+  width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 89px 21px rgba(252, 173, 252, 1) inset;
+  -webkit-box-shadow: 0px 0px 89px 21px rgba(252, 173, 252, 1) inset;
+  -moz-box-shadow: 0px 0px 89px 21px rgba(252, 173, 252, 1) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face.front {
+  transform: translateZ(100px);
+}
+.face.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.face.right {
+  width: 200px;
+  transform: rotateY(90deg) translateZ(300px);
+}
+.face.left {
+  width: 200px;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.face.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
